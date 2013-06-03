@@ -39,5 +39,5 @@ bakesale() {
     
     shift; shift
     
-    source "$bakesale_source/$stage/$cmd.sh"
+    source "$bakesale_source/stages/$stage/$cmd.sh"
 }

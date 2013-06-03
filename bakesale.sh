@@ -5,23 +5,8 @@ set -e
 bakesale_script=$( cd $(dirname $0) ; pwd -P )
 bakesale_source=$( dirname "${BASH_SOURCE[0]}" )
 
-cat << EOF
 
-                                    *  *  *
-                                    |  |  |
-                                   +++++++++
-                                   +/\/-\/\+
-                                   +\/\-/\/+
-                                   +++++++++
-                                   
-                                  BAKESALE :)
-
-                         Qu'ils mangent de la brioche.
-
-
-          More sleep lost by tiredpixel (http://www.tiredpixel.com).
-
-EOF
+source "$bakesale_source/common/banner.sh"
 
 
 # = Create Cakebox

@@ -56,7 +56,7 @@ carrying using rsync+ssh, and waving using ssh+rvm+bundle and ssh+rvm+foreman.
     
     # = Carry
     
-    bakesale carry rsync_ssh tunefl@example.com:tunefl/ "--exclude vendor/bundle/ --exclude .bundle/ --exclude bin/"
+    bakesale carry rsync_ssh tunefl@example.com tunefl/ "--exclude vendor/bundle/ --exclude .bundle/ --exclude bin/"
     
     # = Wave
     
@@ -65,6 +65,23 @@ carrying using rsync+ssh, and waving using ssh+rvm+bundle and ssh+rvm+foreman.
     bakesale wave ssh_rvm_foreman tunefl@example.com ruby-2.0.0-p0@tunefl "export --root tunefl/ --app tunefl --user tunefl upstart /etc/init"
     
     ssh tunefl@example.com touch tunefl/tmp/restart.txt
+
+For deploying to multiple servers, pass a string representation of an array for
+any SSH parameters.
+
+`/Users/mlnw/Deployments/tunefl.sh` :
+
+    sshs="(tunefl@example.com tunefl@example.org)"
+    
+    # = Carry
+    
+    bakesale carry rsync_ssh "$sshs" tunefl/ "--exclude vendor/bundle/ --exclude .bundle/ --exclude bin/"
+    
+    # = Wave
+    
+    bakesale wave ssh_rvm_bundle "$sshs" ruby-2.0.0-p0@tunefl tunefl/
+    
+    bakesale wave ssh_rvm_foreman "$sshs" ruby-2.0.0-p0@tunefl "export --root tunefl/ --app tunefl --user tunefl upstart /etc/init"
 
 
 ## It doesn't...

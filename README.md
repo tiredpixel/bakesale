@@ -56,21 +56,13 @@ carrying using rsync+ssh, and waving using ssh+rvm+bundle and ssh+rvm+foreman.
     
     # = Carry
     
-    bakesale carry rsync_ssh \
-        tunefl@example.com:tunefl/ \
-        "--exclude vendor/bundle/ --exclude .bundle/ --exclude bin/"
+    bakesale carry rsync_ssh tunefl@example.com:tunefl/ "--exclude vendor/bundle/ --exclude .bundle/ --exclude bin/"
     
     # = Wave
     
-    bakesale wave ssh_rvm_bundle \
-        tunefl@example.com \
-        /usr/local/rvm/environments/ruby-2.0.0-p0@tunefl \
-        tunefl/
+    bakesale wave ssh_rvm_bundle tunefl@example.com ruby-2.0.0-p0@tunefl tunefl/
     
-    bakesale wave ssh_rvm_foreman \
-        tunefl@example.com \
-        /usr/local/rvm/environments/ruby-2.0.0-p0@tunefl \
-        "export --root tunefl/ --app tunefl --user tunefl upstart /etc/init"
+    bakesale wave ssh_rvm_foreman tunefl@example.com ruby-2.0.0-p0@tunefl "export --root tunefl/ --app tunefl --user tunefl upstart /etc/init"
     
     ssh tunefl@example.com touch tunefl/tmp/restart.txt
 

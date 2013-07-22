@@ -125,7 +125,7 @@ Do whatever makes you happy. We'll probably still like you. :)
 May you find peace, and help others to do likewise.
 
 
-## Licence
+## License
 
 © [tiredpixel](http://www.tiredpixel.com) 2013. It is free software, released
 under the MIT License, and may be redistributed under the terms specified in

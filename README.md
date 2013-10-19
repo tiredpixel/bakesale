@@ -21,7 +21,7 @@ More sleep lost by [tiredpixel](http://www.tiredpixel.com).
 Clone the repository somewhere, then source the main `bakesale.sh` within your
 deployment script.
 
-    $ git clone git://github.com/tiredpixel/bakesale.git /Users/mlnw/bakesale
+    $ git clone --branch stable git://github.com/tiredpixel/bakesale.git /Users/mlnw/bakesale
 
 `/Users/mlnw/Deployments/tunefl.sh` :
 
